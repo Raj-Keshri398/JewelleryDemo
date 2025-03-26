@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Jewellery Shop</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for jewelry...">
+                <button type="submit">Search</button>
+            </div>
+            <div class="user-actions">
+                <button type="button" id="refreshButton" onclick="location.reload()">Refresh</button>
+                <a href="login.html">Login</a>
+                <a href="cart.html">Cart</a>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#all">All Jewellery</a></li>
+                <li><a href="#gold">Gold</a></li>
+                <li><a href="#diamond">Diamond</a></li>
+                <li><a href="#silver">Silver</a></li>
+                <li><a href="#men">Men's Jewellery</a></li>
+                <li><a href="#women">Women's Jewellery</a></li>
+                <li><a href="#dailywear">Daily Wear</a></li>
+                <li><a href="#more">More</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Add a hidden div for "All Jewellery" -->
+    <div id="all"></div>
+    <br>
+    <main>
+        <div class="auto-scrolls">
+            <div class="scroll-imagess">
+                <img src="img1.jpg" alt="Gold Necklace">
+                <img src="img2.jpg" alt="Diamond Earrings">
+                <img src="img3.jpg" alt="Silver Bracelet">
+                <img src="img4.jpg" alt="Gold Necklace">
+                <img src="img5.jpg" alt="Diamond Earrings">
+                <img src="img6.jpg" alt="Silver Bracelet">
+                <img src="img7.jpg" alt="Gold Necklace">
+                <img src="img8.jpg" alt="Diamond Earrings">
+                <img src="img9.jpg" alt="Silver Bracelet">
+                <img src="s-img1.jpg" alt="Gold Necklace">
+                <img src="s-img2.jpg" alt="Diamond Earrings">
+                <img src="s-img3.jpg" alt="Silver Bracelet">
+                <!-- Add more images as needed -->
+            </div>
+        </div>
+
+        <!-- Gold Section -->
+        <section id="gold" class="category-section">
+            <div class="product-grid">
+                <h3>Gold</h3>
+                <div class="auto-scroll">
+                    <div class="scroll-images">
+                        <img src="img1.jpg" alt="Gold Necklace">
+                        <img src="img2.jpg" alt="Diamond Earrings">
+                        <img src="img3.jpg" alt="Silver Bracelet">
+                        <img src="img4.jpg" alt="Silver Bracelet">
+                        <img src="img5.jpg" alt="Silver Bracelet">
+                        <img src="img6.jpg" alt="Silver Bracelet">
+                        <img src="img1.jpg" alt="Gold Necklace">
+                        <img src="img2.jpg" alt="Diamond Earrings">
+                        <img src="img3.jpg" alt="Silver Bracelet">
+                        <img src="img4.jpg" alt="Silver Bracelet">
+                        <img src="img5.jpg" alt="Silver Bracelet">
+                        <img src="img6.jpg" alt="Silver Bracelet">
+                        <!-- Add more images as needed -->
+                    </div>
+                </div>
+                <div class="product-grid-wrapper">
+                    <div class="product" data-category="gold">
+                        <img src="img1.jpg" alt="Gold Necklace">
+                        <p>Gold Necklace</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Elegant 22K gold necklace with intricate design, perfect for special occasions.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★☆</span> (24)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    <div class="product" data-category="diamond">
+                        <img src="img2.jpg" alt="Diamond Earrings">
+                        <p>Gold Ring</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                18K gold ring with classic design, suitable for daily wear and special events.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★★</span> (36)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    <div class="product" data-category="silver">
+                        <img src="img3.jpg" alt="Silver Bracelet">
+                        <p>Gold Chain</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Premium 24K gold chain with secure clasp, available in multiple lengths.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★☆☆</span> (15)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    <div class="product" data-category="silver">
+                        <img src="img4.jpg" alt="Silver Bracelet">
+                        <p>Gold Coin</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Pure 24K gold investment coin with certificate of authenticity.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★☆</span> (42)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    <div class="product" data-category="silver">
+                        <img src="img4.jpg" alt="Silver Bracelet">
+                        <p>Gold Coin</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Pure 24K gold investment coin with certificate of authenticity.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★☆</span> (42)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    
+                    <div class="product" data-category="silver">
+                        <img src="img5.jpg" alt="Silver Bracelet">
+                        <p>Gold Earing</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Delicate gold earrings with secure butterfly backs, hypoallergenic.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★★</span> (58)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    <div class="product" data-category="silver">
+                        <img src="img6.jpg" alt="Silver Bracelet">
+                        <p>Gold Bangles</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Set of 3 traditional gold bangles with intricate carvings.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★☆</span> (31)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Silver Section -->
+        <section id="silver" class="category-section">
+            <div class="product-grid">
+                <h3>Silver</h3>
+                <div class="auto-scroll">
+                    <div class="scroll-images">
+                        <img src="img1.jpg" alt="Gold Necklace">
+                        <img src="img2.jpg" alt="Diamond Earrings">
+                        <img src="img9.jpeg" alt="Silver Bracelet">
+                        <!-- Add more images as needed -->
+                    </div>
+                </div>
+                <div class="product-grid-wrapper">
+                    <div class="product" data-category="gold">
+                        <img src="img2.jpg" alt="Gold Necklace">
+                        <p>Silver Necklace</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Sterling silver necklace with adjustable length and secure clasp.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★☆</span> (28)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    <div class="product" data-category="diamond">
+                        <img src="img4.jpg" alt="Diamond Earrings">
+                        <p>Silver Ring</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Classic silver ring with polished finish, available in multiple sizes.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★★</span> (45)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    <div class="product" data-category="silver">
+                        <img src="img7.jpg" alt="Silver Bracelet">
+                        <p>Silver Chain</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Durable silver chain with lobster clasp, perfect for pendants.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★☆☆</span> (19)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    <div class="product" data-category="silver">
+                        <img src="img7.jpg" alt="Silver Bracelet">
+                        <p>Silver Coin</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Pure silver collectible coin with protective casing.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★☆</span> (22)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    <div class="product" data-category="silver">
+                        <img src="img7.jpg" alt="Silver Bracelet">
+                        <p>Silver Earing</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Elegant silver earrings with secure backs, nickel-free.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★★</span> (63)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    <div class="product" data-category="silver">
+                        <img src="img7.jpg" alt="Silver Bracelet">
+                        <p>Silver Bangles</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Set of 2 polished silver bangles with smooth edges.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★☆</span> (37)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    <div class="product" data-category="silver">
+                        <img src="img7.jpg" alt="Silver Bracelet">
+                        <p>Silver Earing</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Elegant silver earrings with secure backs, nickel-free.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★★</span> (63)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Diamond Section -->
+        <section id="diamond" class="category-section">
+            <div class="product-grid">
+                <h3>Diamond</h3>
+                <div class="auto-scroll">
+                    <div class="scroll-images">
+                        <img src="img4.jpg" alt="Gold Necklace">
+                        <img src="img5.jpg" alt="Diamond Earrings">
+                        <img src="img6.jpg" alt="Silver Bracelet">
+                        <img src="img1.jpg" alt="Gold Necklace">
+                        <img src="img2.jpg" alt="Diamond Earrings">
+                        <img src="img3.jpg" alt="Silver Bracelet">
+                        <img src="img8.jpg" alt="Gold Necklace">
+                        <img src="img7.jpg" alt="Diamond Earrings">
+                        <img src="img9.jpg" alt="Silver Bracelet">
+                        <!-- Add more images as needed -->
+                    </div>
+                </div>
+                <div class="product-grid-wrapper">
+                    <div class="product" data-category="gold">
+                        <img src="img2.jpg" alt="Gold Necklace">
+                        <p>Diamond Necklace</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                14K white gold necklace with genuine diamond pendant.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★★</span> (52)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    <div class="product" data-category="diamond">
+                        <img src="img4.jpg" alt="Diamond Earrings">
+                        <p>Diamond Ring</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Solitaire diamond ring in platinum setting, GIA certified.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★★</span> (47)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    <div class="product" data-category="silver">
+                        <img src="img7.jpg" alt="Silver Bracelet">
+                        <p>Diamond Chain</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                18K gold chain with diamond accents, adjustable length.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★☆</span> (29)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    
+                    <div class="product" data-category="silver">
+                        <img src="img7.jpg" alt="Silver Bracelet">
+                        <p>Diamond Coin</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Limited edition commemorative coin with diamond inlay.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★☆</span> (18)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    <div class="product" data-category="silver">
+                        <img src="img7.jpg" alt="Silver Bracelet">
+                        <p>Diamond Coin</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Limited edition commemorative coin with diamond inlay.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★☆</span> (18)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    <div class="product" data-category="silver">
+                        <img src="img7.jpg" alt="Silver Bracelet">
+                        <p>Diamond Coin</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Limited edition commemorative coin with diamond inlay.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★☆</span> (18)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                    <div class="product" data-category="silver">
+                        <img src="img7.jpg" alt="Silver Bracelet">
+                        <p>Diamond Coin</p>
+                        <div class="product-info">
+                            <div class="product-description">
+                                Limited edition commemorative coin with diamond inlay.
+                            </div>
+                            <div class="product-review">
+                                <span class="stars">★★★★☆</span> (18)
+                            </div>
+                        </div>
+                        <button class="cart-btn">Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Jewelry Shop. All rights reserved.</p>
+        <ul>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+        </ul>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

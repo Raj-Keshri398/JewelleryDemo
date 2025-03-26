@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <main>
+        <section id="gold" class="category-section">
+            <div class="product-grid">
+                <h3>Gold</h3>
+                <div class="product" data-category="gold" data-images='["img2.jpg", "img3.jpg", "img4.jpg"]'>
+                    <img src="img2.jpg" alt="Gold Necklace">
+                    <p>Gold Necklace</p>
+                    <button class="cart-btn">Add to Cart</button>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <div id="detail-modal" class="detail-modal">
+        <div class="detail-content">
+            <span class="close-btn">&times;</span>
+            <div class="image-slider">
+                <button class="prev-btn">&#10094;</button>
+                <img src="" id="detail-image" alt="Jewelry Image">
+                <button class="next-btn">&#10095;</button>
+            </div>
+            <h2 id="detail-title">Jewelry Name</h2>
+            <p id="detail-description">Jewelry Description</p>
+            <div class="detail-actions">
+                <button class="cart-btn">Add to Cart</button>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div id="reviews-section">
+                <h3>Reviews</h3>
+                <p>No reviews yet.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const productImages = document.querySelectorAll(".product img");
+            const modal = document.getElementById("detail-modal");
+            const detailImage = document.getElementById("detail-image");
+            const detailTitle = document.getElementById("detail-title");
+            const detailDescription = document.getElementById("detail-description");
+            const closeBtn = document.querySelector(".close-btn");
+            const prevBtn = document.querySelector(".prev-btn");
+            const nextBtn = document.querySelector(".next-btn");
+            let imageIndex = 0;
+            let imageList = [];
+
+            productImages.forEach(img => {
+                img.addEventListener("click", function () {
+                    const product = this.closest(".product");
+                    const productName = product.querySelector("p").textContent;
+                    const productCategory = product.dataset.category;
+                    imageList = JSON.parse(product.dataset.images);
+                    imageIndex = 0;
+                    
+                    detailImage.src = imageList[imageIndex];
+                    detailTitle.textContent = productName;
+                    detailDescription.textContent = `This is a beautiful ${productCategory} jewelry piece.`;
+                    
+                    modal.style.display = "flex";
+                });
+            });
+
+            prevBtn.addEventListener("click", function () {
+                imageIndex = (imageIndex > 0) ? imageIndex - 1 : imageList.length - 1;
+                detailImage.src = imageList[imageIndex];
+            });
+
+            nextBtn.addEventListener("click", function () {
+                imageIndex = (imageIndex < imageList.length - 1) ? imageIndex + 1 : 0;
+                detailImage.src = imageList[imageIndex];
+            });
+
+            closeBtn.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+        });
+    </script>
+</body>
+</html>

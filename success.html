@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Successful</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+/* Success Page */
+.success-container {
+    padding: 50px;
+    text-align: center;
+}
+
+.success-container h1 {
+    color: #27ae60;
+    font-size: 32px;
+}
+
+.success-container p {
+    font-size: 18px;
+    color: #555;
+}
+
+.success-container button {
+    margin-top: 20px;
+    width: auto;
+    padding: 10px 20px;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>🎉 Order Placed Successfully! 🎉</h1>
+    </header>
+    <main>
+        <p>Thank you for shopping with us! Your order has been placed successfully.</p>
+        <p>We will notify you when your jewelry is shipped.</p>
+        <button onclick="goHome()">Go to Homepage</button>
+    </main>
+    <script>
+        function goHome() {
+            // Clear cart after successful order
+            localStorage.removeItem("cart");
+            localStorage.removeItem("selectedProduct");
+            window.location.href = "index.html"; // Redirect to Homepage
+        }
+    </script>
+</body>
+</html>

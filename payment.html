@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 15px;
+        }
+
+        header a {
+            color: yellow;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .container {
+            width: 50%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .order-summary {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 20px;
+        }
+
+        .payment-methods label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pay-btn {
+            background: green;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .pay-btn:hover {
+            background: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Payment</h1>
+        <a href="cart.html">Back to Cart</a>
+    </header>
+
+    <div class="container">
+        <h2>Billing & Shipping Information</h2>
+        <form id="payment-form">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+
+            <label for="address">Shipping Address</label>
+            <input type="text" id="address" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" required>
+
+            <h2>Order Summary</h2>
+            <div class="order-summary">
+                <p><strong>Item:</strong> <span id="order-name">Loading...</span></p>
+                <p><strong>Price:</strong> $<span id="order-price">0</span></p>
+            </div>
+
+            <h2>Payment Method</h2>
+            <div class="payment-methods">
+                <label>
+                    <input type="radio" name="payment-method" value="credit-card" checked> Credit Card
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="paypal"> PayPal
+                </label>
+            </div>
+
+            <button type="submit" class="pay-btn">Complete Purchase</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jewelry Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let checkoutProduct = JSON.parse(localStorage.getItem("checkoutProduct")) || {};
+            let checkoutProducts = JSON.parse(localStorage.getItem("checkoutProducts")) || [];
+
+            const orderName = document.getElementById("order-name");
+            const orderPrice = document.getElementById("order-price");
+
+            if (checkoutProduct.name) {
+                orderName.textContent = checkoutProduct.name;
+                orderPrice.textContent = (Math.random() * 100 + 20).toFixed(2);
+            } else if (checkoutProducts.length > 0) {
+                orderName.textContent = `${checkoutProducts.length} items`;
+                orderPrice.textContent = (checkoutProducts.length * (Math.random() * 100 + 20)).toFixed(2);
+            } else {
+                orderName.textContent = "No items";
+                orderPrice.textContent = "0.00";
+            }
+
+            document.getElementById("payment-form").addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                alert("Payment successful! Thank you for your purchase.");
+                localStorage.removeItem("checkoutProduct");
+                localStorage.removeItem("checkoutProducts");
+                window.location.href = "index.html"; // Redirect to home/shop page
+            });
+        });
+    </script>
+</body>
+</html>
